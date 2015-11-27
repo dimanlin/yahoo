@@ -23,10 +23,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'therubyracer'
-gem 'yahoofinance'
+gem 'yahoo-finance'
 gem 'devise'
 gem "twitter-bootstrap-rails"
 gem 'slim-rails'
+# gem jquery-rails
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

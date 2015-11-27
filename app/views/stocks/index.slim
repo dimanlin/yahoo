@@ -1,0 +1,15 @@
+table.table
+  thead
+    tr
+      th
+        | Name
+      th
+        | Num
+  tbody
+    - @stocks.each do |stock|
+      tr
+        td
+          = link_to stock.name, stock_path(stock)
+        td
+          = stock.num
+
