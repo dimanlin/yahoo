@@ -18,8 +18,6 @@ html lang="en"
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
 
-
-
   body
     .navbar.navbar-default.navbar-static-top
         .container
@@ -35,13 +33,9 @@ html lang="en"
               li= link_to "Link 3", "/path3"
             ul.nav.navbar-nav.navbar-right
               li
-                a href="./"
-                  | Fixed top
-                  span.sr-only (current)
+                = link_to "Registration", new_user_registration_path
               li
-                a href="./"
-                  | Fixed top
-                  span.sr-only (current)
+                = link_to "Authorization", new_user_session_path
 
     .container
       .row
