@@ -1,3 +1,5 @@
+#chart_div{style="width: 900px; height: 500px"}
+
 table.table
   thead
     tr
@@ -13,3 +15,6 @@ table.table
         td
           = stock.num
 
+javascript:
+  google.load("visualization", "1", {packages:["corechart"]})
+  google.setOnLoadCallback(drawChart)
