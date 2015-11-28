@@ -6,4 +6,7 @@ p
   ' Email:
   = @user.email
 
-= link_to 'Редактировать', edit_user_path(@user)
+p
+  = link_to 'Редактировать', edit_user_path(@user)
+  br
+  = link_to 'Сменить пароль', edit_password_user_path(@user)

@@ -32,18 +32,18 @@ html lang="en"
             - if current_user
               ul.nav.navbar-nav
                 li{class="#{'active' if controller_name == 'stocks'}"}
-                  = link_to "My stocks", stocks_path
+                  = link_to 'Мой портфель', stocks_path
             ul.nav.navbar-nav.navbar-right
               - if current_user
                 li
-                  = link_to "Профаил", user_path(current_user)
+                  = link_to 'Профаил', user_path(current_user)
                 li
-                  = link_to "Выйти", destroy_user_session_path, method: :delete
+                  = link_to 'Выйти', destroy_user_session_path, method: :delete
               - else
                 li
-                  = link_to "Регистрация", new_user_registration_path
+                  = link_to 'Регистрация', new_user_registration_path
                 li
-                  = link_to "Авторизация", new_user_session_path
+                  = link_to 'Авторизация', new_user_session_path
 
     .container
       .row

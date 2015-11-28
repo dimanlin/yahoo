@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   resources :stocks, only: :index
-  resources :users, except: :index
+  resources :users, except: :index do
+    member do
+      get :edit_password
+      post :update_password
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

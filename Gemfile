@@ -27,6 +27,7 @@ gem 'yahoo-finance'
 gem 'devise'
 gem "twitter-bootstrap-rails"
 gem 'slim-rails'
+gem 'devise-i18n'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

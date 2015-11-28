@@ -30,4 +30,13 @@ class User < ActiveRecord::Base
     result.delete_if {|row| row.last == 0}
     result
   end
+
+  def update_password!(current_password, new_password, confirm_password)
+    unless valid_password?(current_password)
+      errors.add(:current_password, "не верный.")
+      return false
+    end
+
+    reset_password!(new_password, confirm_password)
+  end
 end

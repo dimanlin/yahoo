@@ -6,6 +6,7 @@
 
     = form_for @user do |f|
       .form-group class="#{'has-error' if @user.errors.full_messages_for(:email).present?}"
+        = label_tag :email
         = f.text_field :email, class: 'form-control'
         p.text-danger
           = @user.errors.full_messages_for(:email).join(', ')
