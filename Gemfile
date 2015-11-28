@@ -27,7 +27,6 @@ gem 'yahoo-finance'
 gem 'devise'
 gem "twitter-bootstrap-rails"
 gem 'slim-rails'
-gem 'rspec-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -41,6 +40,8 @@ gem 'rspec-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
