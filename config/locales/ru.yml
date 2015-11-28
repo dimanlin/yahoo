@@ -8,6 +8,8 @@ ru:
         current_password: Текущий пароль
         password: Новый пароль
         password_confirmation: Подтверждение пароля
+      stock:
+        num: Количество
   date:
     abbr_day_names:
     - Вс

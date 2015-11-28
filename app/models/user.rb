@@ -39,4 +39,17 @@ class User < ActiveRecord::Base
 
     reset_password!(new_password, confirm_password)
   end
+
+  def add_stocks(options = {})
+    if stock = stocks.find_by_name(options[:name])
+      new_stock = Stock.new(options)
+      if new_stock.valid?
+        stock.update(num: stock.num + options[:num].to_i)
+      else
+        false
+      end
+    else
+      stocks.create(options)
+    end
+  end
 end

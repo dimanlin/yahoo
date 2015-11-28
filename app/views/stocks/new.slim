@@ -1,0 +1,19 @@
+.row
+  .col-sm-3.hidden-xs
+  .col-md-6
+    = form_for @stock do |f|
+      .form-group class="#{'has-error' if @stock.errors.full_messages_for(:name).present?}"
+        = label_tag 'Акция'
+        = f.select :name, options_for_select(Stock::SYM), {},  class: 'form-control'
+        p.text-danger
+          = @stock.errors.full_messages_for(:name).join(', ')
+
+      .form-group class="#{'has-error' if @stock.errors.full_messages_for(:num).present?}"
+        = label_tag 'Количество'
+        = f.number_field :num, class: 'form-control'
+        p.text-danger
+          = @stock.errors.full_messages_for(:num).join(', ')
+
+      = f.submit "Сохранить"
+
+  .col-sm-3.hidden-xs

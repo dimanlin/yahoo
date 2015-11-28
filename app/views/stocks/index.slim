@@ -1,29 +1,31 @@
 .row
   .col-xs-12
-    = form_tag :stocks, method: :get do
-      .checkbox
-        - @stocks.each do |stock|
-          label
-            = check_box_tag "stock[]", stock.name, params['stock'] ? params['stock'].include?(stock.name) : true
-            = stock.name
-      = submit_tag 'Update', class: 'btn btn-primary'
-
-    #chart_div{style="width: 100%; height: 500px" data-graph=@graph_data.to_json}
-
-    table.table
-      thead
-        tr
-          th
-            | Название
-          th
-            | Количество
-      tbody
-        - @stocks.each do |stock|
-          tr
-            td
+    = link_to 'Добавить акции в портфель', new_stock_path
+    - if @stocks.present?
+      = form_tag :stocks, method: :get do
+        .checkbox
+          - @stocks.each do |stock|
+            label
+              = check_box_tag "stock[]", stock.name, params['stock'] ? params['stock'].include?(stock.name) : true
               = stock.name
-            td
-              = stock.num
+        = submit_tag 'Показать', class: 'btn btn-primary'
+
+      #chart_div{style="width: 100%; height: 500px" data-graph=@graph_data.to_json}
+
+      table.table
+        thead
+          tr
+            th
+              | Название
+            th
+              | Количество
+        tbody
+          - @stocks.each do |stock|
+            tr
+              td
+                = stock.name
+              td
+                = stock.num
 
 javascript:
   google.load("visualization", "1", {packages: ["corechart"]})

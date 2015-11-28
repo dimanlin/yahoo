@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  resources :stocks, only: :index
+  resources :stocks
   resources :users, except: :index do
     member do
       get :edit_password
