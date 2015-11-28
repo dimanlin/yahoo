@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   def portfolio_price(sym = nil)
     @@yahoo_client = YahooFinance::Client.new if @@yahoo_client.nil?
     @data = {}
-    work_stocks = sym ? stocks.where(sym) : stocks
+    work_stocks = sym.present? ? stocks.where(name: sym) : stocks
 
     work_stocks.each do |stock|
       instance_variable_set("@#{stock.name.downcase}", @@yahoo_client.historical_quotes(stock.name, { start_date: 2.years.ago, end_date: Time::now }))

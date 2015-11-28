@@ -27,16 +27,23 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="#"Yahoo
+          a.navbar-brand href="/"Yahoo
           .navbar-collapse.collapse.navbar-responsive-collapse
             - if current_user
               ul.nav.navbar-nav
-                li= link_to "My stocks", stocks_path
+                li{class="#{'active' if controller_name == 'stocks'}"}
+                  = link_to "My stocks", stocks_path
             ul.nav.navbar-nav.navbar-right
-              li
-                = link_to "Registration", new_user_registration_path
-              li
-                = link_to "Authorization", new_user_session_path
+              - if current_user
+                li
+                  = link_to "Профаил", user_path(current_user)
+                li
+                  = link_to "Выйти", destroy_user_session_path, method: :delete
+              - else
+                li
+                  = link_to "Регистрация", new_user_registration_path
+                li
+                  = link_to "Авторизация", new_user_session_path
 
     .container
       .row

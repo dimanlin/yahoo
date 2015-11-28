@@ -3,6 +3,6 @@ class StocksController < ApplicationController
 
   def index
     @stocks = current_user.stocks
-    @graph_data = current_user.portfolio_price
+    @graph_data = current_user.portfolio_price(params[:stock])
   end
 end
