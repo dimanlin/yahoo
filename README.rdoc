@@ -1,28 +1,27 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+2015-11-27 болел
+1. Создал приложение
+2. Добавил bootstrap(layout)
+3. Создал модели User, Stock
+4. Сделал регистрацию из коробки.
+------------------------------------- 1 час
+5. Гуглил как забирать данные у yahoo
+6. Прикрутил javascript график от google
+7. Получил первые данные от yahoo
+------------------------------------- 4 часа
+2015-11-28 не болел
+1. Прикрутил rspec
+2. Поправил обработку полученных от yahoo данных
+3. График теперь работает на реальных данных от yahoo
+4. Редактирование профайла
+5. Смена пароля для пользователя, с проверкой по текущему
+6. Добавление в портфель новых акций
+7. Локализация, приложение теперь работает в :ru, и ругается по русски.
+8. Работа с формами(ошибки валидации пишутся под полем, поле выделяется красным бордером), контроллерами, моделями
+-------------------------------------------------------------------------- 4 часа
+2015-11-28
+9. Сгенерил вьюхи для devise, переделал из erb в slim, поправил их под bootstrap - 7 мин
+10. Пишу этот README
+11. Щас буду писать тесты
