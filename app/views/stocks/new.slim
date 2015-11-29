@@ -14,6 +14,6 @@
         p.text-danger
           = @stock.errors.full_messages_for(:num).join(', ')
 
-      = f.submit "Сохранить"
+      = f.submit "Сохранить", class: 'btn btn-primary'
 
   .col-sm-3.hidden-xs
